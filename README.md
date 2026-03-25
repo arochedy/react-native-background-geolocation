@@ -126,7 +126,7 @@ $ npm install react-native-background-geolocation --save
 > - **iOS** reads the key from `Info.plist` with `TSLocationManagerLicense`.
 >   - In **DEBUG** builds, the behavior is less intrusive, so you typically do not see the same Android-style startup error when the key is missing.
 >
-> If Android reports a license error, first verify that the key is present in the app's `AndroidManifest.xml` and that you are testing the expected build type (**DEBUG** vs **RELEASE**).
+> There is no supported config or flag to disable Android license validation.  If Android reports a license error, first verify that the key is present in the app's `AndroidManifest.xml` and that you are testing the expected build type (**DEBUG** vs **RELEASE**).
 
 ## :large_blue_diamond: Using the plugin ##
 
