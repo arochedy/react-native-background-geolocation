@@ -56,6 +56,9 @@ android {
 > [!NOTE]
 > If you've **not** [purchased a license](https://www.transistorsoft.com/shop/products/react-native-background-geolocation#plans), **ignore this step** &mdash; the plugin is fully functional in *DEBUG* builds so you can try before you [buy](https://www.transistorsoft.com/shop/products/react-native-background-geolocation#plans).
 
+> [!TIP]
+> Android license validation happens in the native SDK when your app calls `BackgroundGeolocation.ready(config)`.  The SDK reads the value of `com.transistorsoft.locationmanager.license` from your `AndroidManifest.xml`.  In **DEBUG** builds, the SDK can run in evaluation mode and may show a warning; in **RELEASE** builds, a missing or invalid key will fail license validation.
+
 ```diff
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.transistorsoft.backgroundgeolocation.react">
@@ -75,7 +78,6 @@ android {
   </application>
 </manifest>
 ```
-
 
 
 

@@ -48,6 +48,9 @@ Edit **`Info.plist`**.  Add the following items (Set **Value** as desired):
 > [!NOTE]
 > If you've **not** [purchased a license](https://www.transistorsoft.com/shop/products/react-native-background-geolocation#plans), **ignore this step** &mdash; the plugin is fully functional in *DEBUG* builds so you can try before you [buy](https://www.transistorsoft.com/shop/products/react-native-background-geolocation#plans).
 
+> [!TIP]
+> iOS license validation also happens in the native SDK when your app calls `BackgroundGeolocation.ready(config)`.  The SDK reads `TSLocationManagerLicense` from your `Info.plist`.  The iOS SDK's validation warning path is less intrusive than Android, so you typically won't see the same startup error message in **DEBUG** builds when the key is missing.
+
 In your __`Info.plist`__, add the following key: 
 
 |      Key     |     Type     |     Value     |
@@ -148,4 +151,3 @@ BackgroundFetch.configure({
   BackgroundFetch.finish(taskId);   // <-- signal that your task is complete
 });
 ```
-

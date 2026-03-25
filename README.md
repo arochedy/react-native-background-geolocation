@@ -116,6 +116,18 @@ $ npm install react-native-background-geolocation --save
 
  __`TSLocationManagerLicense`__.  Paste the contents of your license key into the __`value`__.
 
+> [!IMPORTANT]
+> ### How license validation works
+> License validation is performed by the native Transistorsoft SDK on each platform when you call [`BackgroundGeolocation.ready(config)`](https://transistorsoft.github.io/react-native-background-geolocation/latest/interfaces/BackgroundGeolocation.html#ready), not by the JavaScript layer.
+>
+> - **Android** reads the key from `android/app/src/main/AndroidManifest.xml` with `<meta-data android:name="com.transistorsoft.locationmanager.license" ... />`.
+>   - In **DEBUG** builds, the SDK runs in evaluation mode without a purchased key, so you may see a warning or toast but the plugin still works.
+>   - In **RELEASE** builds, a missing or invalid key causes license validation to fail.
+> - **iOS** reads the key from `Info.plist` with `TSLocationManagerLicense`.
+>   - In **DEBUG** builds, the behavior is less intrusive, so you typically do not see the same Android-style startup error when the key is missing.
+>
+> If Android reports a license error, first verify that the key is present in the app's `AndroidManifest.xml` and that you are testing the expected build type (**DEBUG** vs **RELEASE**).
+
 ## :large_blue_diamond: Using the plugin ##
 
 ```javascript
