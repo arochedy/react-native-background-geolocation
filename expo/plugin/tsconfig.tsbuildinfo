@@ -1,1 +1,1 @@
-{"root":["./src/androidPlugin.ts","./src/iOSPlugin.ts","./src/index.ts"],"version":"5.9.3"}
+{"root":["./src/androidplugin.ts","./src/iosplugin.ts","./src/index.ts"],"version":"5.9.3"}
