@@ -132,6 +132,8 @@ $ npm install react-native-background-geolocation --save
 >
 > The actual validation algorithm / license check is not implemented in this repository.  It lives in the proprietary native Transistorsoft SDK dependencies (`com.transistorsoft:tslocationmanager` on Android and `TSLocationManager` on iOS), which are invoked when `.ready(config)` calls into the native layer.
 >
+> More generally, this package is a React Native bridge around those native SDKs.  Without them, the plugin does not function.  Core behavior such as background tracking, motion-activity handling, geofencing, scheduling and provider-state logic is implemented in the proprietary native SDK, while this repository mostly exposes that functionality to JavaScript.
+>
 > There is no supported config or flag to disable Android license validation.  If Android reports a license error, first verify that the key is present in the app's `AndroidManifest.xml` and that you are testing the expected build type (**DEBUG** vs **RELEASE**).
 
 ## :large_blue_diamond: Using the plugin ##
